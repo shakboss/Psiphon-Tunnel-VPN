@@ -12,7 +12,7 @@
 #
 # System Required: Debian9+, Ubuntu20+, Trisquel9+
 #
-# https://github.com/MisterTowelie/
+# https://github.com/MisterTowelie/Psiphon-Tunnel-VPN
 #
 # Author scripts: MisterTowelie
 
