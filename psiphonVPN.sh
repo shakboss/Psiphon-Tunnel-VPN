@@ -58,16 +58,16 @@ psiphon_local_commit=''
 psiphon_remove_commit=''
 action=''
 
-
 if [[ "$(uname)" != 'Linux' ]]; then
-  echo -e "${level_msg[0]}This operating system is not supported."
-  exit 1
+    echo -e "${level_msg[0]}This operating system is not supported."
+    exit 1
 fi
 
 function check_update_psiphon(){
-    echo -e "$INFO Check update Psiphon Tunnel VPN"
     psiphon_local_commit="$("${psiphon_file}" --version | grep "Revision:" | head -1 | cut -d : -f 2 | tr -d " ")"
     psiphon_remove_commit="$(curl -sL "$psiphon_url_commit" | grep "linux" | head -1 | cut -d \" -f 4 | tr -d "linux ")"
+    echo -e "$INFO Check update Psiphon Tunnel VPN"
+
   if [ "$psiphon_local_commit" != "$psiphon_remove_commit" ]; then
     echo -e "$INFO LOCAL VERSION Psiphon Tunnel VPN is not synced with REMOTE VERSION, initiating update..."
   else
@@ -89,14 +89,14 @@ function check_dependencies(){
         echo
 		echo -e "${level_msg[0]}""[Curl] is required to use this installer."
         echo
-		IFS= read -n1 -rp "Press any key to install Curl and continue..."
+	    IFS= read -n1 -rp "Press any key to install Curl and continue..."
 		sudo apt update || (echo -e "${level_msg[0]}""Failed to update repositories, check your internet connection." && exit)
 		sudo apt install -y curl || (echo -e "${level_msg[0]}""Failed to install missing packages [wget] and [curl]." && exit)
 	fi
 }
 
 function download_files(){
-   if ! $(type -P curl) --progress-bar --request GET -sLq --retry 5 --retry-delay 10 --retry-max-time 60 --url "${psiphon_url}" --output "${psiphon_file}"; then
+    if ! $(type -P curl) --progress-bar --request GET -sLq --retry 5 --retry-delay 10 --retry-max-time 60 --url "${psiphon_url}" --output "${psiphon_file}"; then
         echo -e "${level_msg[0]}""Download $psiphon_name failed."
         rm -Rf "${psiphon_file}"
         exit 1
@@ -172,7 +172,7 @@ function uninstall_psiphon(){
         echo
         echo -e "${level_msg[2]}""Deleting all $psiphon_name files successfully."
         rm -Rf "${psiphon_dir}"
-   else
+    else
         echo
         echo -e "${level_msg[0]}""${msg_DB[0]}"
         echo

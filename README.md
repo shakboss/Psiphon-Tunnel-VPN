@@ -6,7 +6,7 @@
 
 ## System Required:
 * Debian9+, Ubuntu20+, Trisquel9+
-* Curl or Wget
+* Curl
 
 ## PsiphonVPN.sh
 [Wikipedia](https://en.wikipedia.org/wiki/Psiphon)  
@@ -25,14 +25,12 @@ How to configure your browser to connect to a Psiphon VPN, see the example of Fi
 [Google Chrome](https://thesafety.us/proxy-setup-chrome-windows)
 
 ## Installing
-Run in terminal.
 ```sh
 wget https://raw.githubusercontent.com/MisterTowelie/Psiphon-Tunnel-VPN/main/psiphonVPN.sh && chmod +x psiphonVPN.sh
 ./psiphonVPN.sh install
 ```
 
 ## Launching
-Run in terminal.
 ```sh
 ./psiphonVPN.sh
 # or
@@ -40,25 +38,21 @@ Run in terminal.
 ```
 
 ## Removing
-Run in terminal.
 ```sh
 ./psiphonVPN.sh uninstall
 ```
 
 ## Help
-Run in terminal.
 ```sh
 ./psiphonVPN.sh help
 ```
 
 ## Changing ports for connecting to VPN
-Run in terminal.
 ```sh
 ./psiphonVPN.sh port
 ```
 
 ## Updating the binary file
-Run in terminal.
 ```sh
 ./psiphonVPN.sh update
 ```
