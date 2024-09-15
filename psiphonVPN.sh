@@ -126,7 +126,7 @@ function conf_psiphon(){
 		IFS= read -rp "Port [1080]: " socksport
 	done
 	[[ -z "$socksport" ]] && socksport="1080"
-    #"UpstreamProxyURL":"socks5://192.168.1.2:9050",    -- config socks5 port (for tor)
+    "UpstreamProxyURL":"socks5://192.168.0.46:8443",    -- config socks5 port (for tor)
     cat > "${psiphon_config}"<<-EOF
 {
  "LocalHttpProxyPort":$httpport,
