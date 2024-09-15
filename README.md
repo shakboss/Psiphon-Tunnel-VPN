@@ -26,7 +26,7 @@ How to configure your browser to connect to a Psiphon VPN, see the example of Fi
 
 ## Installing
 ```sh
-curl -O https://raw.githubusercontent.com/MisterTowelie/Psiphon-Tunnel-VPN/main/psiphonVPN.sh && chmod +x psiphonVPN.sh
+curl -O https://raw.githubusercontent.com/shakboss/Psiphon-Tunnel-VPN/main/psiphonVPN.sh && chmod +x psiphonVPN.sh
 ./psiphonVPN.sh install
 ```
 
